@@ -10,7 +10,7 @@ using namespace std;
 class ShoppingCart {
    public:
       ShoppingCart();
-      ShoppingCart(string name, string date);
+      ShoppingCart(string name="none", string date="January 1, 2016");
       
       string GetCustomerName() const;
       string GetDate() const;
