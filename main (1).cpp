@@ -40,5 +40,51 @@ cout<<"i-output items from descriptions"<<endl;
 cout<<"o-output shopping cart"<<endl;
 cout<<"q- quit"<<endl;
 }
+void ExecuteMenu(char option, ShoppingCart& theCart) {
+    string name, description;
+    double price;
+    int quantity;
+    
+    switch(option) {
+        case 'a':
+            // Add item to cart
+            cout << "\nADD ITEM TO CART" << endl;
+            cout << "Enter the item name:" << endl;
+            getline(cin, name);
+            cout << "Enter the item description:" << endl;
+            getline(cin, description);
+            cout << "Enter the item price:" << endl;
+            cin >> price;
+            cout << "Enter the item quantity:" << endl;
+            cin >> quantity;
+            theCart.AddItem(ItemToPurchase(name, description, price, quantity));
+            break;
+        
+        case 'd':
+            // Remove item from cart
+            cout << "\nREMOVE ITEM FROM CART" << endl;
+            cout << "Enter name of item to remove:" << endl;
+            cin.ignore(); // Ignore the newline character
+            getline(cin, name);
+            theCart.RemoveItem(name);
+            break;
+        
+        case 'c':
+            // Change item quantity
+            cout << "\nCHANGE ITEM QUANTITY" << endl;
+            cout << "Enter the item name:" << endl;
+            getline(cin, name);
+            cout << "Enter the new quantity:" << endl;
+            cin >> quantity;
+            theCart.ModifyItem(ItemToPurchase(name, "", 0, quantity));
+            break;
+        
+        case 'i':
+            // Output items' descriptions
+            cout << "\nOUTPUT ITEMS' DESCRIPTIONS" << endl;
+            cout << theCart.GetCustomerName() << "'s Shopping Cart - " << theCart.GetDate() << endl;
+            cout << "\nItem Descriptions" << endl;
+            theCart.PrintDescriptions();
+            break;
 
 
