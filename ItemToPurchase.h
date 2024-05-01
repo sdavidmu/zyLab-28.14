@@ -15,38 +15,18 @@ class ItemToPurchase {
          itemQuantity = quantity;
       }
       
-      void SetName(string name) {
-         itemName = name;
-      }
-      void SetDescription(string description) {
-         itemDescription = description;
-      }
-      void SetPrice(int price) {
-         itemPrice = price;
-      }
-      void SetQuantity(int quantity) {
-         itemQuantity = quantity;
-      }
+      void SetName(string name);
+      void SetDescription(string description);
+      void SetPrice(int price);
+      void SetQuantity(int quantity);
+
+      string GetName() const;
+      string GetDescription() const;
+      int GetPrice() const;
+      int GetQuantity() const;
       
-      string GetName() const {
-         return itemName;
-      }
-      string GetDescription() const {
-         return itemDescription;
-      }
-      int GetPrice() const {
-         return itemPrice;
-      }
-      int GetQuantity() const {
-         return itemQuantity;
-      }
-      
-      void PrintItemCost() {
-         cout << itemName << ": $" << itemPrice << endl;
-      }
-      void PrintItemDescription(){
-         cout << itemName << ": $" << itemDescription << endl;
-      }
+      void PrintItemCost();
+      void PrintItemDescription();
    
    private:
       string itemName;

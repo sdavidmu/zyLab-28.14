@@ -92,8 +92,8 @@ void ShoppingCart::PrintTotal() {
     for (int i = 0; i < cartItems.size(); i++) {
         if (cartItems[i].GetName() != "none" && cartItems[i].GetPrice()!= 0 && cartItems[i].GetQuantity() != 0) {
             double finalProductSpending = 0;
-            finalProductSpending = cartItems[i].GetQuantity * cartItems[i].GetPrice();
-            cout << cartItems[i].GetName() << " " << cartItems[i].GetQuantity() << " @ $" << cartItems[i].GetPrice() " = " << finalProductSpending<< endl;
+            finalProductSpending = cartItems[i].GetQuantity() * cartItems[i].GetPrice();
+            cout << cartItems[i].GetName() << " " << cartItems[i].GetQuantity() << " @ $" << cartItems[i].GetPrice() << " = " << finalProductSpending<< endl;
             value += finalProductSpending;
         }
     }
